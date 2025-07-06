@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static%}
+{% block title %} register page {% endblock %}
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-cnter mb-4">تسجيل حساب</h2>
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        {{form|crispy}}
+        <div class="form-check mt-3">
+            <input type="checkbox" id="showPassword" class="form-check-input">
+            <label for="showPassword" class="form-check-label">show password</label>
+        </div>
+        <button  type="submit" class="btn btn-success mt-3 w-100">تاكيد</button>
+    </form>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const showPasswordCheckbox = document.getElementById('showPassword');
+        showPasswordCheckbox.addEventListener('change', function(){
+            const pwd1 = document.getElementById('id_password1');
+            const pwd2 = document.getElementById('id_password2');
+            if (this.checked) {
+                pwd1.type = 'text';
+                pwd2.type = 'text';
+            } else {
+                pwd1.type = 'password';
+                pwd2.type = 'password';
+                
+            }
+
+
+        });
+    });
+</script>
+{% endblock %}

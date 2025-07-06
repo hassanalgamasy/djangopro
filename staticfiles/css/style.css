@@ -1,0 +1,13 @@
+.card-img {
+    max-width:80px;
+    margin:auto;
+    display: block;
+}
+/* .card{ */
+    /* transition: 0.3s ease; */
+    /* border: 1px solid #ccc; */
+/* } */
+/* .card:hover{ */
+    /* transform: scale(1.03); */
+    /* box-shadow: 0 0 15px rgb(0,0,0,0.2); */
+/* } */

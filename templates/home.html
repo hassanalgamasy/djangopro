@@ -1,0 +1,69 @@
+{% extends 'base.html'%}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}الرئيسيه{% endblock %}
+{% block content %}
+
+<!--hero section-->
+
+<section class="hero-section text-center text-white d-flex align-items-center 
+    justify-content-center">
+    <div class="overlay"></div>
+    <div class="container hero-content">
+        <h1 class="display-4 fw-bold mb-3">نظام وسيط الشحن الذكى</h1>
+        <p class="hero-subtitle">اربط شحنتك بافضل شركات الشحن بخطوة واحده </p>
+        <div>
+            <a href="{% url 'register' %}" class="btn btn-warning btn-lg 
+            mx-2">تسجيل حساب</a>
+            <a href="#" class="btn btn-outline-light btn-lg mx-2">طلب شحنه</a>
+        </div>
+    </div>
+</section>
+
+<!--Features Section-->
+
+<section class="features-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 fw-bold">ليه تختار couple</h2>
+        <div class="row text-center">
+        
+        {% for feature in features %}  
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="feature-card p-4 h-100 shadow rounded bg-white">
+                <i class="fas {{feature.icon}} fa-3x {{feature.color}} mb-3"></i>
+                <h5 class="fw-bold">{{feature.title}}</h5>
+                <p class="text-muted">{{feature.desc}}</p>
+            </div>
+        </div>
+        {% endfor%}
+        </div>
+    </div>
+
+</section>
+
+<!--cards--><!--قسم الكروت-->
+
+<div class="text-center my-5">
+    <h1 class="display-4">مرحبا بك وسيط الشحن</h1>
+    <p class="lead">بنوصلك بافضل شركات الشحن اعتماديه وامان وسرعه</p>
+</div>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+    {% for card in cards %}
+        <div class="col-md-4 col-sm-touch  col-10 mb-4 d-flex">
+        <div class="card w-100">
+            <img src="{% static card.image %}" class="card-img-top card-img-custom" alt="{{card.alt}}">
+            <div class="card-body text-center">
+                <h5 class="card-title ">{{card.title}}</h5>
+                <p class="card-text ">{{card.text}}</p>
+            </div>
+        </div>
+        </div>
+    {% endfor%}
+    </div>
+    
+</di>
+
+
+
+{% endblock %}

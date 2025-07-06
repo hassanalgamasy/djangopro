@@ -1,0 +1,37 @@
+body{
+    background-color:rgb(167, 191, 199);
+}
+
+/* hero-section*/
+.hero-section{
+    position: relative;
+    height: 90vh;
+    background:url("../img/hero-sec.jpg") center center/cover no-repeat ;
+}
+.hero-section .overlay{
+    position: absolute;
+    z-index: 0;
+}
+.hero-subtitle{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* cards*/
+.card-img-custom {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    border-bottom: 5px solid #ccc;
+
+}
+.card{
+    width: 18rem;
+    transition: 0.3s ease;
+    border: 15px solid #ccc;
+}
+.card:hover{
+    transform: scale(1.03);
+    box-shadow: 0 0 15px rgb(0,0,0,0.2);
+}
